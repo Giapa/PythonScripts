@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+import subprocess
+
+interface= input("Give Interface: ")
+new_mac=input("Give MAC Adress: ")
+print ("[+] Changing MAC Adress for "+interface+ "to " +new_mac)
+
+"""
+subprocess.call("ifconfig "+interface+" down",shell=True)
+subprocess.call("ifconfig "+interface+" hw ether "+new_mac,shell=True)
+subprocess.call("ifconfig "+interface+" up",shell=True)""" 
+ 
+subprocess.call(["ifconfig", interface, "down"]) 
+subprocess.call(["ifconfig", interface, "hw", "ether", new_mac]) 
+subprocess.call(["ifconfig", interface, "up"])
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+~                                                                                                                                                                                                                  
+-- VISUAL --                                                                                                                                                                           5         11,12         All
+

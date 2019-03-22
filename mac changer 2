@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+import subprocess
+import optparse
+
+def get_arguments():
+    #dhlwsh orismatwn tou programmatos anti na ta dinw apo pliktrologio
+    parser = optparse.OptionParser()
+    parser.add_option("-i", "--interface", dest="interface", help="Interface to change MAC adress")
+    parser.add_option("-m", "--mac", dest="new_mac", help="The new MAC adress")
+    (options, arguments) =  parser.parse_args()
+    if not options.interface:
+        parser.error("Give an interface")
+    if not options.new_mac:
+        parser.error("Give a new MAC")
+    return options
+
+
+def change_mac(interface,new_mac):
+    subprocess.call(["ifconfig", interface, "down"])
+    subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
+    subprocess.call(["ifconfig", interface, "up"])
+
+
+options=get_arguments()
+change_mac(options.interface,options.new_mac)
+
+
+
+"""
+interface= input("Give Interface: ")
+new_mac=input("Give MAC Adress: ")
+print ("[+] Changing MAC Adress for "+interface+ "to " +new_mac)"""
+
+"""
+subprocess.call("ifconfig "+interface+" down",shell=True)
+subprocess.call("ifconfig "+interface+" hw ether "+new_mac,shell=True)
+subprocess.call("ifconfig "+interface+" up",shell=True)"""
+"""
+subprocess.call(["ifconfig", interface, "down"])
+subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
+subprocess.call(["ifconfig", interface, "up"])"""
+
+
+
+"""
+interface= input("Give Interface: ")
+new_mac=input("Give MAC Adress: ")
+print ("[+] Changing MAC Adress for "+interface+ "to " +new_mac)"""
+
+"""
+subprocess.call("ifconfig "+interface+" down",shell=True)
+subprocess.call("ifconfig "+interface+" hw ether "+new_mac,shell=True)
+subprocess.call("ifconfig "+interface+" up",shell=True)"""
+"""
+subprocess.call(["ifconfig", interface, "down"])
+subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
+subprocess.call(["ifconfig", interface, "up"])"""
